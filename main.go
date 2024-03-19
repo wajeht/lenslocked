@@ -6,10 +6,12 @@ import (
 )
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, "<h1>welcome to my awesome site!</h1>")
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, "<h1>contact page</h1>")
 }
 
