@@ -5,15 +5,16 @@ import (
 	"net/http"
 )
 
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "<h1>welcome to my awesome site!</h1>")
+}
+
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "contact")
+	fmt.Fprint(w, "<h1>contact page</h1>")
 }
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "home")
-	})
-
+	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/contact", contactHandler)
 
 	fmt.Println("Starting the server on :8080")
