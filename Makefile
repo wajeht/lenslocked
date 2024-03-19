@@ -14,3 +14,6 @@ format:
 
 lint:
 	echo "linting.."
+
+kill:
+	lsof -ti :8080 | xargs -r kill -9
